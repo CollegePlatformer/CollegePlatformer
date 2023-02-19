@@ -33,14 +33,14 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             jumpCount--;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && jumpCount > 0)
+        /*else if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && jumpCount > 0)
         {
             Debug.Log("double jump pressed");
             //Debug.Log(jumpCount);
 
-            playerRb.AddForce(Vector3.up * jump * 2, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
-        }
+        }*/
     }
 
     void playerMovement()
