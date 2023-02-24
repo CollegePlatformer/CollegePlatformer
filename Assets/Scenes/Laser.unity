@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9795321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.04, y: 4.42, z: 0.32}
+  m_LocalPosition: {x: -37.19, y: -0.31, z: 0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b60750f5d8b624294ad0ad8a46114f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2018669125}
+  laser: {fileID: 0}
 --- !u!1 &415641719
 GameObject:
   m_ObjectHideFlags: 0

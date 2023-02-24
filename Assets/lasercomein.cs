@@ -5,17 +5,25 @@ using UnityEngine;
 public class lasercomein : MonoBehaviour
 {
     public GameObject player;
-    public GameObject laser;
+    [SerializeField] GameObject laser;
+
+    laserflash comein;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("7");
     }
 
+
+    void Awake()
+    {
+        Debug.Log("3");
+        comein = laser.GetComponent<laserflash>();
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(-37, 3, 0);
+        transform.position = player.transform.position + new Vector3(-26, 3, 0);
     }
 
 }
