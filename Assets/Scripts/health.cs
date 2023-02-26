@@ -24,7 +24,7 @@ public class health : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "badobject" && invincible == false)
+        if (other.gameObject.tag == "Enemy" && invincible == false)
         {
             StartCoroutine(Hit());
         }

@@ -23,7 +23,11 @@ public class lasercomein : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(-26, 3, 0);
+        transform.position = player.transform.position + new Vector3(-26, 0, 0);
+        if (comein.destroyit == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

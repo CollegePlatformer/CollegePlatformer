@@ -6,38 +6,45 @@ using UnityEngine;
 public class laserflash : MonoBehaviour
 {
     // private new Renderer renderer;
+    // [SerializeField] GameObject player;
     private Material material;
     public float alpha = 0f;
     // Start is called before the first frame update
+    public bool destroyit = false;
+    // health playerhealth;
     void Start()
     {
-        // renderer = GetComponent<Renderer>();
-        // Material material = renderer.material;
-        // Color color = material.color;
-        // color.a = 0f;
-        // material.color = color;
-        // gameObject.renderer.color.a = 0.5;
         Renderer renderer = GetComponent<Renderer>();
+        // playerhealth = player.GetComponent<health>();
         material = renderer.material;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (renderer != null)
-        // {
-        //     // Get the material of the Renderer component
-        //     Material material = renderer.material;
-
-        //     // Set the alpha value of the material color to make it transparent
-        //     Color color = material.color;
-        //     color.a = 0.5f; // Set the alpha value to 0.5 (50% transparent)
-        //     material.color = color;
-        // }
         Color color = material.color;
         color.a = alpha;
         material.color = color;
+        StartCoroutine(laserphase());
+        Debug.Log("here");
     }
 
+    IEnumerator laserphase()
+    {
+        yield return new WaitForSeconds(3f);
+        alpha = 0.5f;
+        yield return new WaitForSeconds(3f);
+        alpha = 1f;
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Destroyed");
+        destroyit = true;
+    }
 
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (alpha == 1f && other.gameObject.name == "Templayer")
+    //     {
+    //         playerhealth.lives--;
+    //     }
+    // }
 }
