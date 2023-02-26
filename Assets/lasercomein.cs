@@ -11,13 +11,12 @@ public class lasercomein : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("7");
+
     }
 
 
     void Awake()
     {
-        Debug.Log("3");
         comein = laser.GetComponent<laserflash>();
     }
     // Update is called once per frame

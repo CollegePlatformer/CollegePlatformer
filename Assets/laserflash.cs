@@ -6,16 +6,20 @@ using UnityEngine;
 public class laserflash : MonoBehaviour
 {
     // private new Renderer renderer;
-    // [SerializeField] GameObject player;
+    [SerializeField] GameObject player;
     private Material material;
+
+    Collider m_Collider;
     public float alpha = 0f;
     // Start is called before the first frame update
     public bool destroyit = false;
-    // health playerhealth;
+    public bool hit = false;
+    health playerhealth;
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
-        // playerhealth = player.GetComponent<health>();
+        playerhealth = player.GetComponent<health>();
+        m_Collider = GetComponent<Collider>();
         material = renderer.material;
     }
 
@@ -26,7 +30,10 @@ public class laserflash : MonoBehaviour
         color.a = alpha;
         material.color = color;
         StartCoroutine(laserphase());
-        Debug.Log("here");
+        if (alpha == 1f)
+        {
+            m_Collider.enabled = !m_Collider.enabled;
+        }
     }
 
     IEnumerator laserphase()
@@ -36,15 +43,15 @@ public class laserflash : MonoBehaviour
         yield return new WaitForSeconds(3f);
         alpha = 1f;
         yield return new WaitForSeconds(3f);
-        Debug.Log("Destroyed");
         destroyit = true;
     }
 
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (alpha == 1f && other.gameObject.name == "Templayer")
-    //     {
-    //         playerhealth.lives--;
-    //     }
-    // }
+    void OnTriggerEnter(Collider other)
+    {
+        if (alpha == 1f && hit == false)
+        {
+            hit = true;
+            StartCoroutine(playerhealth.Hit());
+        }
+    }
 }
