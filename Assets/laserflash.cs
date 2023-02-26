@@ -9,6 +9,8 @@ public class laserflash : MonoBehaviour
     [SerializeField] GameObject player;
     private Material material;
 
+
+    
     Collider m_Collider;
     public float alpha = 0f;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class laserflash : MonoBehaviour
     health playerhealth;
     void Start()
     {
+        player = GameObject.Find("Templayer");
         Renderer renderer = GetComponent<Renderer>();
         playerhealth = player.GetComponent<health>();
         m_Collider = GetComponent<Collider>();
