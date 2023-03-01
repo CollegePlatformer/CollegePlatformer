@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1690390741}
   - component: {fileID: 1690390740}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,8 +612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9895017a6d06e8f4e91a559cb617664f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSpawned: 0
   speed: 5
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 4525807913755472266, guid: cdf559db288e7194f88f64fddf353222,
+    type: 3}
 --- !u!65 &1690390741
 BoxCollider:
   m_ObjectHideFlags: 0
