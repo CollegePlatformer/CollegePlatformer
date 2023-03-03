@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  spawnercheck: {fileID: 0}
   laser: {fileID: 4525807915338580442}
 --- !u!1 &4525807914236036705
 GameObject:
