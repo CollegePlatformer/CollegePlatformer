@@ -46,8 +46,9 @@ public class spawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
+        //original values was between 10-15 seconds
         //original values was between 15-25 seconds
-        yield return new WaitForSeconds(Random.Range(10.0f, 15.0f));
+        yield return new WaitForSeconds(Random.Range(2.0f, 5.0f));
         if (isSpawned == false)
         {
             isSpawned = true;

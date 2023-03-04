@@ -10,8 +10,10 @@ public class lasercomein : MonoBehaviour
     public GameObject spawnercheck;
     [SerializeField] GameObject laser;
 
-    float laserYPosition;
+    // float laserYPosition;
     spawner spawnerscript;
+
+    Vector3 newPosition;
 
     laserflash comein;
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class lasercomein : MonoBehaviour
         player = GameObject.Find("Templayer");
         spawnercheck = GameObject.Find("Spawner");
         spawnerscript = spawnercheck.GetComponent<spawner>();
+        // laserYPosition = Random.Range(-2.0f, 2.0f);
     }
 
 
@@ -31,9 +34,11 @@ public class lasercomein : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // originally it was -26, 0, 0
-        laserYPosition = spawnercheck.transform.position.y;
-        transform.position = player.transform.position + new Vector3(-26, laserYPosition, 0);
+        newPosition = gameObject.transform.position;
+        newPosition.x = player.transform.position.x - 26f;
+        newPosition.y = gameObject.transform.position.y;
+        gameObject.transform.position = newPosition;
+
         if (comein.destroyit == true)
         {
             Destroy(gameObject);

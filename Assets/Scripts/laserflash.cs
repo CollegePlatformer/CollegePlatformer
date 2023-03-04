@@ -45,7 +45,7 @@ public class laserflash : MonoBehaviour
         alpha = 0.5f;
         yield return new WaitForSeconds(3f);
         alpha = 1f;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         destroyit = true;
     }
 
