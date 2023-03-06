@@ -14,6 +14,7 @@ public class Border : MonoBehaviour
     void Start()
     {
         StartCoroutine(Countdown());
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class Border : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             Debug.Log("Hit");
+            player.transform.position = player.transform.position + new Vector3(25, 10, 0);
         }
     }
 }

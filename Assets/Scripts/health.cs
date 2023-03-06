@@ -9,17 +9,24 @@ public class health : MonoBehaviour
     public bool invincible = false;
     //itimer = invincibility timer
     public float itimer = 3f;
+    [SerializeField] GameObject player;
+    PlayerController controller;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
+        controller = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // healthtext.text = lives.ToString();
+        if (lives == 0)
+        {
+            controller.isDead = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)

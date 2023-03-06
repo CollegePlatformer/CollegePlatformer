@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityModifier = 1.0f;
     private float horizontalInput;
     private int jumpCount = 2;
+    public bool atFinish = false;
+    public bool isDead = false;
     private bool isOnGround = true;
     private Rigidbody playerRb;
 
