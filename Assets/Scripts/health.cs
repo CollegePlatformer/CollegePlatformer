@@ -26,7 +26,6 @@ public class health : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" && invincible == false)
         {
-            Debug.Log("REe");
             StartCoroutine(Hit());
         }
     }

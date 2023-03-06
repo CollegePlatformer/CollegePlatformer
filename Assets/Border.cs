@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Border : MonoBehaviour
 {
+    public GameObject player;
     private float timer = 3.0f;
     private bool move = false;
-    public float speed = 3.0f;
+    private float speed = 7.0f;
+    public AudioSource soundPlayer;
+    private bool hasPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,19 @@ public class Border : MonoBehaviour
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(timer);
+        if(!hasPlayed)
+        {
+            soundPlayer.Play();
+            hasPlayed = true;
+        }
         move = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            Debug.Log("Hit");
+        }
     }
 }
