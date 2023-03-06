@@ -19,7 +19,7 @@ public class laserflash : MonoBehaviour
     health playerhealth;
     void Start()
     {
-        player = GameObject.Find("Templayer");
+        player = GameObject.Find("Player");
         Renderer renderer = GetComponent<Renderer>();
         playerhealth = player.GetComponent<health>();
         m_Collider = GetComponent<Collider>();
