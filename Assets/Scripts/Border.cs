@@ -7,7 +7,7 @@ public class Border : MonoBehaviour
     public GameObject player;
     private float timer = 3.0f;
     private bool move = false;
-    private float speed = 5.0f;
+    private float speed = 5.5f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
     // Start is called before the first frame update
