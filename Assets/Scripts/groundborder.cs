@@ -8,7 +8,7 @@ public class groundborder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Student");
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class groundborder : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Student")
         {
             Debug.Log("Hit");
             player.transform.position = player.transform.position + new Vector3(0, 15, 0);

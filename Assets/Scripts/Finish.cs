@@ -12,7 +12,7 @@ public class Finish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Student");
         controller = player.GetComponent<PlayerController>();
     }
 
@@ -24,7 +24,7 @@ public class Finish : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Student")
         {
             Debug.Log("gg");
             controller.atFinish = true;

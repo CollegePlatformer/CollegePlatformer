@@ -9,7 +9,7 @@ public class Playagain : MonoBehaviour
     {
         Physics.gravity = new Vector3(0, -9.8f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene("LevelPusher");
+        SceneManager.LoadScene("Level1");
     }
 
     void Update()
@@ -17,7 +17,7 @@ public class Playagain : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape)){
             Debug.Log("Pressed");
             Physics.gravity = new Vector3(0, -9.8f, 0);
-            SceneManager.LoadScene("LevelPusher");
+            SceneManager.LoadScene("Level1");
         }
     }
 }
