@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 727827562}
   - component: {fileID: 727827568}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Student
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,6 +1011,7 @@ MonoBehaviour:
   walkSpeed: 8
   jump: 110
   gravityModifier: 2.7
+  turnSpeed: 5
   atFinish: 0
   isDead: 0
 --- !u!54 &727827563
@@ -2699,7 +2700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543451347}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -5.99648, y: 16.373466, z: -13.522962}
+  m_LocalPosition: {x: -5.996749, y: 16.373466, z: -13.522962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3393,7 +3394,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.434276, y: 1}
+    m_SensorSize: {x: 2.4326124, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3410,7 +3411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816340019}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -5.99648, y: 16.373466, z: -13.522962}
+  m_LocalPosition: {x: -5.996749, y: 16.373466, z: -13.522962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

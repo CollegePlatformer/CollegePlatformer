@@ -7,14 +7,14 @@ public class Border : MonoBehaviour
     public GameObject player;
     private float timer = 3.0f;
     private bool move = false;
-    private float speed = 7.0f;
+    private float speed = 4.0f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Countdown());
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Student");
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Border : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Student")
         {
             Debug.Log("Hit");
             player.transform.position = player.transform.position + new Vector3(25, 10, 0);

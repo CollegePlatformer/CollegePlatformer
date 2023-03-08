@@ -15,7 +15,7 @@ public class health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Student");
         controller = player.GetComponent<PlayerController>();
     }
 
