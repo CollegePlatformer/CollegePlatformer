@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5667919010180513982}
   - component: {fileID: 7587590134219846772}
   - component: {fileID: 5615627625148229476}
+  - component: {fileID: -8720156049827292087}
   m_Layer: 0
   m_Name: eraser
   m_TagString: Eraser
@@ -98,3 +99,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8454366230493806278, guid: 1fa9a11d28f428a46b256782b76d8d95, type: 3}
+--- !u!114 &-8720156049827292087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236086970598626721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc5ab26379f637479209129ec8790e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounce: 150

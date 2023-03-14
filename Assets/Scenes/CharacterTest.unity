@@ -487,7 +487,6 @@ MonoBehaviour:
   jump: 110
   gravityModifier: 2.7
   turnSpeed: 5
-  bounceSpeed: 5
   atFinish: 0
   isDead: 0
 --- !u!54 &727827563
@@ -1101,6 +1100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
+        type: 3}
+      propertyPath: bounceSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2790397273861920952, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
       propertyPath: m_RootOrder
