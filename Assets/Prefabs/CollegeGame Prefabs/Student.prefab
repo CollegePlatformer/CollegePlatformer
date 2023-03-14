@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 1024196090462301463}
   m_Layer: 0
   m_Name: Student
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2621,7 +2621,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &2790397273861920959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2651,6 +2651,7 @@ MonoBehaviour:
   jump: 110
   gravityModifier: 2.7
   turnSpeed: 5
+  bounceSpeed: 7500
   atFinish: 0
   isDead: 0
 --- !u!1 &2790397273862145370

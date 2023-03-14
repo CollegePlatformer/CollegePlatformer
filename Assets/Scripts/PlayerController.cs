@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityModifier = 1.0f;
     [SerializeField]
     private float turnSpeed = 5f;
+    [SerializeField]
+    private float bounceSpeed = 5f;
     private float horizontalInput;
     private int jumpCount = 2;
     public bool atFinish = false;
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(jumpCount);
+        //Debug.Log(jumpCount);
         playerMovement();
 
         if(horizontalInput != 0)
@@ -85,6 +87,12 @@ public class PlayerController : MonoBehaviour
             studentAnim.SetBool("Run-Jump", false);
             jumpCount = 2;
             Debug.Log(collision.gameObject.tag);
+        }
+        
+        if(collision.gameObject.CompareTag("Eraser"))
+        {
+            playerRb.AddForce(transform.up * bounceSpeed, ForceMode.Force);
+            Debug.Log("Student Bounced");
         }
     }
 }
