@@ -10,6 +10,8 @@ public class Victorydisplay : MonoBehaviour
     public Text textdisplay;
     public Image img;
     private GameObject button;
+    public AudioSource soundPlayer;
+    private bool hasPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,11 @@ public class Victorydisplay : MonoBehaviour
         }
         if (controller.isDead == true)
         {
+            if(!hasPlayed)
+            {
+                soundPlayer.Play();
+                hasPlayed = true;
+            }
             textdisplay.text = "You failed since you woke up late. unpoggers.";
             textdisplay.enabled = true;
             img.enabled = true;
