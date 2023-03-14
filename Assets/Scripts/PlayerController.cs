@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     void playerMovement()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         Vector3 direction = new Vector3(horizontalInput, 0, 0);
         direction.Normalize();
         
