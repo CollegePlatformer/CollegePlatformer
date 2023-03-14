@@ -381,6 +381,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 567971759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &684621264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5615627625148229476, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c260acf0de20a4e4589c3254af9ace44,
+        type: 2}
+    - target: {fileID: 8236086970598626721, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_Name
+      value: eraser
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721121559541010203, guid: 0d03501e54454644aab88c788296ac55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d03501e54454644aab88c788296ac55, type: 3}
 --- !u!1 &727827561
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &727827562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +492,9 @@ MonoBehaviour:
   walkSpeed: 8
   jump: 110
   gravityModifier: 2.7
+  turnSpeed: 5
+  atFinish: 0
+  isDead: 0
 --- !u!54 &727827563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1100,25 +1178,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a599a36db38cd4a8136be4bcc0949b, type: 3}
---- !u!1 &5175115587129774907 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2790397273862145368, guid: 93a599a36db38cd4a8136be4bcc0949b,
-    type: 3}
-  m_PrefabInstance: {fileID: 5175115587129774906}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5175115587129774908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5175115587129774907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae29c84399434b0499d53884b10fd2d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 8
-  jump: 110
-  gravityModifier: 1
-  turnSpeed: 5
