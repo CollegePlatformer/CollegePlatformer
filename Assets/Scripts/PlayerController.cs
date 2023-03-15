@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
-            Debug.Log("jump input pressed");
+            //Debug.Log("jump input pressed");
             //Debug.Log(jumpCount);
             studentAnim.SetBool("Jump_Anim", true);
             studentAnim.SetBool("Run-Jump", true);
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
             studentAnim.SetBool("Jump_Anim", false);
             studentAnim.SetBool("Run-Jump", false);
             jumpCount = 2;
-            Debug.Log(collision.gameObject.tag);
+            //Debug.Log(collision.gameObject.tag);
         }
         
     }
