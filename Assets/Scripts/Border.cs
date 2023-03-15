@@ -26,6 +26,17 @@ public class Border : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Student")
+        {
+            Debug.Log("Hit");
+            StartCoroutine(Hit());
+            // gameObject.transform.position = gameObject.transform.position - new Vector3(13, 0, 0);
+            // player.transform.position = player.transform.position + new Vector3(25, 10, 0);
+        }
+    }
+
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(timer);
@@ -37,12 +48,11 @@ public class Border : MonoBehaviour
         move = true;
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator Hit()
     {
-        if (other.gameObject.name == "Student")
-        {
-            Debug.Log("Hit");
-            player.transform.position = player.transform.position + new Vector3(25, 10, 0);
-        }
+        move = false;
+        gameObject.transform.position = gameObject.transform.position - new Vector3(13, 0, 0);
+        yield return new WaitForSeconds(timer - 1);
+        move = true;
     }
 }
