@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(jumpCount);
+        //Debug.Log(jumpCount);
         playerMovement();
 
         if(horizontalInput != 0)
@@ -86,5 +86,6 @@ public class PlayerController : MonoBehaviour
             jumpCount = 2;
             Debug.Log(collision.gameObject.tag);
         }
+        
     }
 }

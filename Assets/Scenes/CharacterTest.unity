@@ -388,12 +388,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5615627625148229476, guid: 0d03501e54454644aab88c788296ac55,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: c260acf0de20a4e4589c3254af9ace44,
-        type: 2}
     - target: {fileID: 8236086970598626721, guid: 0d03501e54454644aab88c788296ac55,
         type: 3}
       propertyPath: m_Name
@@ -1106,6 +1100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
+        type: 3}
+      propertyPath: bounceSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2790397273861920952, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1160,16 +1159,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2790397273861920953, guid: 93a599a36db38cd4a8136be4bcc0949b,
-        type: 3}
-      propertyPath: m_Mass
-      value: 6.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2790397273861920953, guid: 93a599a36db38cd4a8136be4bcc0949b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 2790397273862145368, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
