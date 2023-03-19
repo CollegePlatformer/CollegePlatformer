@@ -2555,6 +2555,7 @@ GameObject:
   - component: {fileID: 2790397273861920953}
   - component: {fileID: 2790397273861920959}
   - component: {fileID: 1024196090462301463}
+  - component: {fileID: 9098346605440039667}
   m_Layer: 0
   m_Name: Student
   m_TagString: Player
@@ -2651,9 +2652,24 @@ MonoBehaviour:
   jump: 110
   gravityModifier: 2.7
   turnSpeed: 5
-  bounceSpeed: 7500
   atFinish: 0
   isDead: 0
+--- !u!114 &9098346605440039667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790397273862145368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763bae0f6918e8a4f958406924a3b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  invincible: 0
+  itimer: 3
+  player: {fileID: 0}
 --- !u!1 &2790397273862145370
 GameObject:
   m_ObjectHideFlags: 0

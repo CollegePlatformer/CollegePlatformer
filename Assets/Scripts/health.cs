@@ -39,6 +39,7 @@ public class health : MonoBehaviour
 
     public IEnumerator Hit()
     {
+        Debug.Log("Hit");
         invincible = true;
         lives--;
         yield return new WaitForSeconds(itimer);
