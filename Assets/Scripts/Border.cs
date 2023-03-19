@@ -24,6 +24,10 @@ public class Border : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
+        if (player.transform.position.x < gameObject.transform.position.x - 5)
+        {
+            gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,8 +36,6 @@ public class Border : MonoBehaviour
         {
             Debug.Log("Hit");
             StartCoroutine(Hit());
-            // gameObject.transform.position = gameObject.transform.position - new Vector3(13, 0, 0);
-            // player.transform.position = player.transform.position + new Vector3(25, 10, 0);
         }
     }
 
