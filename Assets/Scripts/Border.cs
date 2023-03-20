@@ -24,6 +24,19 @@ public class Border : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
+        if (player.transform.position.x < gameObject.transform.position.x - 5)
+        {
+            gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Student")
+        {
+            Debug.Log("Hit");
+            StartCoroutine(Hit());
+        }
     }
 
     IEnumerator Countdown()
@@ -37,12 +50,11 @@ public class Border : MonoBehaviour
         move = true;
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator Hit()
     {
-        if (other.gameObject.name == "Student")
-        {
-            Debug.Log("Hit");
-            player.transform.position = player.transform.position + new Vector3(25, 10, 0);
-        }
+        move = false;
+        gameObject.transform.position = gameObject.transform.position - new Vector3(13, 0, 0);
+        yield return new WaitForSeconds(timer - 1);
+        move = true;
     }
 }
