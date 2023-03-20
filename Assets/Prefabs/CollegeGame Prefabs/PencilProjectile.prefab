@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1097782571}
   - component: {fileID: 1097782572}
   - component: {fileID: 1097782573}
+  - component: {fileID: -4570164319236580160}
   m_Layer: 0
   m_Name: PencilProjectile
   m_TagString: PlayerShot
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+--- !u!114 &-4570164319236580160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089878267727812736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db818f3146fbd34c973d0218414b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistTime: 5
 --- !u!1001 &1089878269459996528
 PrefabInstance:
   m_ObjectHideFlags: 0
