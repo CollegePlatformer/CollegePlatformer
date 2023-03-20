@@ -58,6 +58,11 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
         }*/
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("shoot input pressed");
+        }
     }
 
     void playerMovement()
