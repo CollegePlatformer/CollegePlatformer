@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float walkSpeed = 10.0f;
     [SerializeField] float jump = 5.0f;
     [SerializeField] float gravityModifier = 1.0f;
-    [SerializeField]
+    [SerializeField] GameObject shot, shootPoint;
     private float turnSpeed = 5f;
     private float horizontalInput;
     private int jumpCount = 2;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private bool isOnGround = true;
     private Rigidbody playerRb;
     private Animator studentAnim;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("shoot input pressed");
+            Instantiate(shot, shootPoint.transform.position, transform.rotation);
         }
     }
 
