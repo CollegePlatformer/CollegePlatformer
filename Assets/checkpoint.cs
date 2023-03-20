@@ -10,6 +10,8 @@ public class checkpoint : MonoBehaviour
     // Start is called before the first frame update
     public Vector3 checkpointmarker;
     private string platformtouch;
+    public AudioSource soundPlayer;
+    public bool hasPlayed = false;
     void Start()
     {
         for (int i = 0; i < checkArray.Length; i++)
@@ -28,24 +30,30 @@ public class checkpoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         switch (other.gameObject.name)
         {
             case "Checkpoint0":
-                Debug.Log("its lit");
                 checkpointmarker = positions[0];
-                Debug.Log(checkpointmarker);
+                Audioplay();
                 break;
             case "Checkpoint1":
-                Debug.Log("Two baby");
                 checkpointmarker = positions[1];
-                Debug.Log(checkpointmarker);
+                Audioplay();
                 break;
             case "Checkpoint2":
-                Debug.Log("Three's company too");
                 checkpointmarker = positions[2];
-                Debug.Log(checkpointmarker);
+                Audioplay();
                 break;
         }
+    }
+
+    void Audioplay()
+    {
+        if(!hasPlayed)
+        {
+            soundPlayer.Play();
+            hasPlayed = true;
+        }
+        hasPlayed = false;
     }
 }

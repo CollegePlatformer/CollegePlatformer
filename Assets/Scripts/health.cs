@@ -11,7 +11,8 @@ public class health : MonoBehaviour
     public float itimer = 3f;
     [SerializeField] GameObject player;
     PlayerController controller;
-    
+    public AudioSource soundPlayer;
+    private bool hasPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,13 @@ public class health : MonoBehaviour
         Debug.Log("Hit");
         invincible = true;
         lives--;
+        if(!hasPlayed)
+        {
+            soundPlayer.Play();
+            hasPlayed = true;
+        }
         yield return new WaitForSeconds(itimer);
         invincible = false;
+        hasPlayed = false;
     }
 }
