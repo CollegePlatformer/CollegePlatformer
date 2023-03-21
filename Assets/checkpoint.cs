@@ -5,7 +5,7 @@ using UnityEngine;
 public class checkpoint : MonoBehaviour
 {
     public GameObject[] checkArray = new GameObject[3];
-    public bool[] touchArray = new bool[3]; 
+    public bool[] touchArray = new bool[3];
     public Vector3[] positions = new Vector3[3];
     // Start is called before the first frame update
     public Vector3 checkpointmarker;
@@ -17,8 +17,11 @@ public class checkpoint : MonoBehaviour
         for (int i = 0; i < checkArray.Length; i++)
         {
             checkArray[i] = GameObject.Find("Checkpoint" + i);
-            touchArray[i] = false;
-            positions[i] = checkArray[i].transform.position;
+            if (checkArray[i] != null)
+            {
+                touchArray[i] = false;
+                positions[i] = checkArray[i].transform.position;
+            }
         }
     }
 
@@ -49,7 +52,7 @@ public class checkpoint : MonoBehaviour
 
     void Audioplay()
     {
-        if(!hasPlayed)
+        if (!hasPlayed)
         {
             soundPlayer.Play();
             hasPlayed = true;
