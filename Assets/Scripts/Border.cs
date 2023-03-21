@@ -24,9 +24,12 @@ public class Border : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
-        if (player.transform.position.x < gameObject.transform.position.x - 5 && player != null)
+        if (player != null)
         {
-            gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
+            if (player.transform.position.x < gameObject.transform.position.x - 5)
+            {
+                gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
+            }
         }
     }
 
@@ -42,7 +45,7 @@ public class Border : MonoBehaviour
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(timer);
-        if(!hasPlayed)
+        if (!hasPlayed)
         {
             soundPlayer.Play();
             hasPlayed = true;
