@@ -24,7 +24,7 @@ public class Border : MonoBehaviour
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
-        if (player.transform.position.x < gameObject.transform.position.x - 5)
+        if (player.transform.position.x < gameObject.transform.position.x - 5 && player != null)
         {
             gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
         }
