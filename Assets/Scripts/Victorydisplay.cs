@@ -9,7 +9,7 @@ public class Victorydisplay : MonoBehaviour
     PlayerController controller;
     public Text textdisplay;
     public Image img;
-    private GameObject button;
+    public GameObject[] buttons;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
     // Start is called before the first frame update
@@ -17,8 +17,6 @@ public class Victorydisplay : MonoBehaviour
     {
         player = GameObject.Find("Student");
         controller = player.GetComponent<PlayerController>();
-        button = GameObject.Find("Button");
-        button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +27,10 @@ public class Victorydisplay : MonoBehaviour
             textdisplay.text = "You woke up and passed your exam. Poggers.";
             textdisplay.enabled = true;
             img.enabled = true;
-            button.SetActive(true);
+            for(int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].SetActive(true);
+            }
             Destroy(player);
         }
         if (controller.isDead == true)
@@ -42,7 +43,7 @@ public class Victorydisplay : MonoBehaviour
             textdisplay.text = "You failed since you woke up late. unpoggers.";
             textdisplay.enabled = true;
             img.enabled = true;
-            button.SetActive(true);
+            buttons[0].SetActive(true);
             Destroy(player);
         }
     }
