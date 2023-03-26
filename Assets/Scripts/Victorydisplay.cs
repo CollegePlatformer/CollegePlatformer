@@ -40,7 +40,7 @@ public class Victorydisplay : MonoBehaviour
                 soundPlayer.Play();
                 hasPlayed = true;
             }
-            textdisplay.text = "You failed since you woke up late. unpoggers.";
+            textdisplay.text = "You failed since you woke up late. Unpoggers.";
             textdisplay.enabled = true;
             img.enabled = true;
             buttons[0].SetActive(true);
