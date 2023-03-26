@@ -11,9 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelPusher.unity
     guid: c231cb068976a50419fe3f9049ea68de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1Benny.unity
     guid: 9f067860c8ceb6d47932bcb674f605ba
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 3b7cf7900fc943442a04b9516954c9cb
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 54f6cba20fd5d2a48bd20f88dc4bd0a8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
