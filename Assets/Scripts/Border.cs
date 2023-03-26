@@ -7,7 +7,7 @@ public class Border : MonoBehaviour
     public GameObject player;
     private float timer = 3.0f;
     private bool move = false;
-    private float speed = 7.0f;
+    public float speed = 6.0f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
     // Start is called before the first frame update
@@ -56,7 +56,7 @@ public class Border : MonoBehaviour
     IEnumerator Hit()
     {
         move = false;
-        gameObject.transform.position = gameObject.transform.position - new Vector3(13, 0, 0);
+        gameObject.transform.position = gameObject.transform.position - new Vector3(25, 0, 0);
         yield return new WaitForSeconds(timer - 1);
         move = true;
     }
