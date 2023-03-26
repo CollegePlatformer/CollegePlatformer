@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jump = 5.0f;
     [SerializeField] float gravityModifier = 1.0f;
     [SerializeField] GameObject shot, shootPoint;
+
+    public AudioSource pencilSound;
+    public AudioSource jumpSound;
     private float turnSpeed = 5f;
     private float horizontalInput;
     private int jumpCount = 2;
@@ -16,7 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool isOnGround = true;
     private Rigidbody playerRb;
     private Animator studentAnim;
-
+    private bool hasPencilPlayed = false;
+    private bool hasJumpPlayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +36,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(jumpCount);
         playerMovement();
 
-        if(horizontalInput != 0)
+        if (horizontalInput != 0)
         {
             studentAnim.SetBool("Run_Anim", true);
         }
@@ -50,6 +54,12 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             isOnGround = false;
             jumpCount--;
+            if (!hasJumpPlayed)
+            {
+                jumpSound.Play();
+                hasJumpPlayed = true;
+            }
+            hasJumpPlayed = false;
         }
         /*else if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && jumpCount > 0)
         {
@@ -64,6 +74,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("shoot input pressed");
             Instantiate(shot, shootPoint.transform.position, transform.rotation);
+            if (!hasPencilPlayed)
+            {
+                pencilSound.Play();
+                hasPencilPlayed = true;
+            }
+            hasPencilPlayed = false;
         }
     }
 
@@ -72,10 +88,10 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         Vector3 direction = new Vector3(horizontalInput, 0, 0);
         direction.Normalize();
-        
+
         transform.Translate(direction * walkSpeed * Time.deltaTime, Space.World);
 
-        if(direction != Vector3.zero)
+        if (direction != Vector3.zero)
         {
             //transform.forward = direction;
             Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
@@ -93,6 +109,6 @@ public class PlayerController : MonoBehaviour
             jumpCount = 2;
             //Debug.Log(collision.gameObject.tag);
         }
-        
+
     }
 }
