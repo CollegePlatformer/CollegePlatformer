@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             studentAnim.SetBool("Run_Anim", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.P)) && isOnGround)
         {
             //Debug.Log("jump input pressed");
             //Debug.Log(jumpCount);
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
             jumpCount--;
         }*/
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
         {
             Debug.Log("shoot input pressed");
             Instantiate(shot, shootPoint.transform.position, transform.rotation);
