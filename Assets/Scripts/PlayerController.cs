@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
         }*/
+        else if (!isOnGround && playerRb.velocity.y < 0)
+        {
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
         {
