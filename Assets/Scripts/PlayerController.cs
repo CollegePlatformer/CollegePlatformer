@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             studentAnim.SetBool("Run_Anim", false);
         }
 
-        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.P)) && isOnGround)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.P)) && isOnGround)
         {
             //Debug.Log("jump input pressed");
             //Debug.Log(jumpCount);
