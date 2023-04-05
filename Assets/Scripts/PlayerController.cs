@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("jump input pressed");
             //Debug.Log(jumpCount);
-            studentAnim.SetBool("Jump_Anim", true);
-            studentAnim.SetBool("Run-Jump", true);
+            //studentAnim.SetBool("Jump_Anim", true);
+            //studentAnim.SetBool("Run-Jump", true);
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             isOnGround = false;
             jumpCount--;
@@ -81,6 +81,17 @@ public class PlayerController : MonoBehaviour
             }
             hasPencilPlayed = false;
         }
+
+        
+        if(playerRb.velocity.y > 0)
+        {
+            studentAnim.SetBool("Jump_Anim", true);
+            studentAnim.SetBool("Run_Anim", false);
+        } else
+        {
+            studentAnim.SetBool("Jump_Anim", false);
+        }
+        
     }
 
     void playerMovement()
@@ -105,10 +116,29 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
             studentAnim.SetBool("Jump_Anim", false);
-            studentAnim.SetBool("Run-Jump", false);
+            //studentAnim.SetBool("Run-Jump", false);
             jumpCount = 2;
             //Debug.Log(collision.gameObject.tag);
         }
+    }
 
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(other.gameObject.CompareTag("Sticky"))
+        {
+            walkSpeed /= 2;
+            jump /= 2;
+            studentAnim.SetBool("Run_Slow_Anim", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        if(other.gameObject.CompareTag("Sticky"))
+        {
+            walkSpeed *= 2;
+            jump *= 2;
+            studentAnim.SetBool("Run_Slow_Anim", false);
+        }
     }
 }
