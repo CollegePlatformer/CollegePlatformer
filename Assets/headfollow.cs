@@ -22,7 +22,10 @@ public class headfollow : MonoBehaviour
     void Update()
     {
         newPosition = gameObject.transform.position;
-        newPosition.y = player.transform.position.y + 3;
+        if (player != null)
+        {
+            newPosition.y = player.transform.position.y + 3;
+        }
         gameObject.transform.position = newPosition;
     }
 
