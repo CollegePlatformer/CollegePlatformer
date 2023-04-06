@@ -51,7 +51,7 @@ public class laserflash : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (alpha == 1f && hit == false)
+        if (alpha == 1f && hit == false && other == player)
         {
             hit = true;
             StartCoroutine(playerhealth.Hit());
