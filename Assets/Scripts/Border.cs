@@ -5,7 +5,6 @@ using UnityEngine;
 public class Border : MonoBehaviour
 {
     public GameObject player;
-    public GameObject head;
     private float timer = 3.0f;
     private bool move = false;
     public float speed = 6.0f;
@@ -15,7 +14,6 @@ public class Border : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Student");
-        head = GameObject.Find("TestHead");
         StartCoroutine(Countdown());
     }
 
@@ -53,7 +51,6 @@ public class Border : MonoBehaviour
             hasPlayed = true;
         }
         move = true;
-        head.SetActive(true);
     }
 
     IEnumerator Hit()

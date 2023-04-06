@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PlayerShot
   - Eraser
+  - Sticky
   layers:
   - Default
   - TransparentFX
