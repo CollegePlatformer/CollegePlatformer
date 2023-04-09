@@ -14,9 +14,11 @@ public class Playagain : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Escape)){
             PlayGame();
         }
+        */
     }
 }
  

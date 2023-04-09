@@ -9,11 +9,13 @@ public class LevelSelectManager : MonoBehaviour
 
     public void Level1()
     {
+        Physics.gravity = new Vector3(0, -9.8f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Level2()
     {
+        Physics.gravity = new Vector3(0, -9.8f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
