@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jump = 5.0f;
     [SerializeField] float gravityModifier = 1.0f;
     [SerializeField] GameObject shot, shootPoint;
+    [SerializeField] float fallGravityModifierFactor;
 
     public AudioSource pencilSound;
     public AudioSource jumpSound;
@@ -69,9 +70,11 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
         }*/
-        else if (!isOnGround && playerRb.velocity.y < 0)
+        else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P)))
         {
-
+            Debug.Log("jump key released");
+            // attempt at making jump height variable/have the player start falling as soon as jump input is let go
+            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
         }
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
