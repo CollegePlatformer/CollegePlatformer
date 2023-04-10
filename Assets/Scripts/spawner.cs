@@ -8,7 +8,8 @@ public class spawner : MonoBehaviour
     private bool topbound = false;
     public bool isSpawned = false;
     public float speed = 5.0f;
-    private float yRange = 4f;
+    private float yDownRange = 48f;
+    private float yUpRange = 58f;
 
     public GameObject laserPrefab;
     void Start()
@@ -30,11 +31,11 @@ public class spawner : MonoBehaviour
             transform.Translate(Vector3.down * Time.deltaTime * speed);
         }
 
-        if (transform.position.y < -yRange)
+        if (transform.position.y < yDownRange)
         {
             topbound = false;
         }
-        if (transform.position.y > yRange)
+        if (transform.position.y > yUpRange)
         {
             topbound = true;
         }

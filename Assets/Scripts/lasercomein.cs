@@ -20,7 +20,7 @@ public class lasercomein : MonoBehaviour
     
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Student");
         spawnercheck = GameObject.Find("Spawner");
         spawnerscript = spawnercheck.GetComponent<spawner>();
         // laserYPosition = Random.Range(-2.0f, 2.0f);
