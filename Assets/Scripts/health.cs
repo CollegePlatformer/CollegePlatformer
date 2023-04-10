@@ -28,6 +28,7 @@ public class health : MonoBehaviour
         {
             controller.isDead = true;
         }
+        Debug.Log(invincible);
     }
 
     void OnTriggerEnter(Collider other)

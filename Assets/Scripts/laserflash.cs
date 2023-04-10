@@ -10,7 +10,7 @@ public class laserflash : MonoBehaviour
     private Material material;
 
 
-    
+
     Collider m_Collider;
     public float alpha = 0f;
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class laserflash : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (alpha == 1f && hit == false && other == player)
+        if (alpha == 1f && hit == false && other.gameObject.name == "Student")
         {
             hit = true;
             StartCoroutine(playerhealth.Hit());

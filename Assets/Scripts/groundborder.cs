@@ -22,7 +22,6 @@ public class groundborder : MonoBehaviour
     {
         if (other.gameObject.name == "Student")
         {
-            Debug.Log("Hit");
             // player.transform.position = player.transform.position + new Vector3(0, 15, 0);
             player.transform.position = check.checkpointmarker + new Vector3(0, 5, 0);
             check.hasPlayed = true;

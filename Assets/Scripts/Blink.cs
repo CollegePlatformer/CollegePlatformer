@@ -18,25 +18,6 @@ public class Blink : MonoBehaviour
     void Start()
     {
         healthcomponents = this.gameObject.GetComponent<health>();
-        // for (int i = 0; i < 3; i++)
-        // {
-        //     children[i] = transform.GetChild(i).gameObject;
-        // }
-        // for (int i = 0; i < 3; i++)
-        // {
-        //     childMeshRenderers[i] = children[i].GetComponent<SkinnedMeshRenderer>();
-        // }
-        // for (int i = 0; i < 3; i++)
-        // {
-        //     childColors[i, 0] = childMeshRenderers[i].materials[0].color;
-        //     Debug.Log(childColors[i, 0]);
-        //     if (i == 1 || i == 2)
-        //     {
-        //         childColors[i, 1] = childMeshRenderers[i].materials[1].color;
-        //         Debug.Log(childColors[i, 1]);
-        //     }
-        // }
-
         for (int i = 0; i < 3; i++)
         {
             children[i] = transform.GetChild(i).gameObject;
@@ -67,8 +48,10 @@ public class Blink : MonoBehaviour
             yield return new WaitForSeconds(blinkfrequency);
             changeToOriginal();
             yield return new WaitForSeconds(blinkfrequency);
+            Debug.Log("Check here");
         }
         blink = false;
+        Debug.Log("Stop blinking");
     }
 
     void changeToRed()
