@@ -51,7 +51,7 @@ public class laserflash : MonoBehaviour
         alpha = 0.5f;
         yield return new WaitForSeconds(2f);
         alpha = 1f;
-        gameObject.tag = "Enemy";
+        // gameObject.tag = "Enemy";
         yield return new WaitForSeconds(2f);
         destroyit = true;
     }
@@ -63,9 +63,18 @@ public class laserflash : MonoBehaviour
         //     hit = true;
         //     StartCoroutine(playerhealth.Hit());
         // }
-        if (other.gameObject.name == "Student" && alpha == 1f)
+
+        // Alternative method that works 50-60% but doesn't make the character invincible permanently (Uncomment the gameobject.tag = enemy line as well)
+        // if (other.gameObject.name == "Student" && alpha == 1f)
+        // {
+        //     gameObject.tag = "Untagged";
+        // }
+
+        // Works 90-100% but makes the character permanently invincible
+        if (other.gameObject.name == "Student" && alpha == 1f && playerhealth.invincible == false)
         {
-            gameObject.tag = "Untagged";
+            // gameObject.tag = "Untagged";
+            StartCoroutine(playerhealth.Hit());
         }
     }
 }
