@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("jump key released");
             // attempt at making jump height variable/have the player start falling as soon as jump input is let go
-            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+            // playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+            StartCoroutine(DelayedFall());
+            // ay yo where the speedcap at
         }
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
@@ -147,5 +149,11 @@ public class PlayerController : MonoBehaviour
             jump *= 2;
             studentAnim.SetBool("Run_Slow_Anim", false);
         }
+    }
+
+    IEnumerator DelayedFall()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
     }
 }
