@@ -56,6 +56,6 @@ public class spawner : MonoBehaviour
             Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation);
             yield return new WaitForSeconds(0.5f);
         }
-        Debug.Log("Hello");
+        //Debug.Log("Hello");
     }
 }
