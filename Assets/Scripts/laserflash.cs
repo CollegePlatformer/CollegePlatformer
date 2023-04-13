@@ -51,16 +51,21 @@ public class laserflash : MonoBehaviour
         alpha = 0.5f;
         yield return new WaitForSeconds(2f);
         alpha = 1f;
+        gameObject.tag = "Enemy";
         yield return new WaitForSeconds(2f);
         destroyit = true;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (alpha == 1f && hit == false && other.gameObject.name == "Student")
+        // if (alpha == 1f && hit == false && other.gameObject.name == "Student")
+        // {
+        //     hit = true;
+        //     StartCoroutine(playerhealth.Hit());
+        // }
+        if (other.gameObject.name == "Student" && alpha == 1f)
         {
-            hit = true;
-            StartCoroutine(playerhealth.Hit());
+            gameObject.tag = "Untagged";
         }
     }
 }

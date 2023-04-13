@@ -48,7 +48,7 @@ public class Blink : MonoBehaviour
             yield return new WaitForSeconds(blinkfrequency);
             changeToOriginal();
             yield return new WaitForSeconds(blinkfrequency);
-            Debug.Log("Check here");
+            Debug.Log("Blink Time");
         }
         blink = false;
         Debug.Log("Stop blinking");

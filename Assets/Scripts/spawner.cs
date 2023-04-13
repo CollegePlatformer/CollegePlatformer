@@ -9,9 +9,9 @@ public class spawner : MonoBehaviour
     public bool isSpawned = false;
     public float speed = 5.0f;
     // was 49
-    private float yDownRange = 0f;
+    private float yDownRange = 49f;
     // was 53
-    private float yUpRange = 4f;
+    private float yUpRange = 53f;
 
     public GameObject laserPrefab;
     void Start()

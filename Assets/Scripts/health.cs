@@ -28,7 +28,7 @@ public class health : MonoBehaviour
         {
             controller.isDead = true;
         }
-        Debug.Log(invincible);
+        Debug.Log("Invincibility is now" + invincible);
     }
 
     void OnTriggerEnter(Collider other)
