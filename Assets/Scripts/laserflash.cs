@@ -33,19 +33,25 @@ public class laserflash : MonoBehaviour
         color.a = alpha;
         material.color = color;
         StartCoroutine(laserphase());
-        if (alpha == 1f)
-        {
-            m_Collider.enabled = !m_Collider.enabled;
-        }
+        // if (alpha == 1f)
+        // {
+        //     m_Collider.enabled = !m_Collider.enabled;
+        // }
+        // if (hit == true)
+        // {
+        //     alpha = 0.1f;
+        //     hit = false;
+        //     StartCoroutine(playerhealth.Hit());
+        // }
     }
 
     IEnumerator laserphase()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         alpha = 0.5f;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         alpha = 1f;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         destroyit = true;
     }
 
