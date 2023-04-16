@@ -8,8 +8,10 @@ public class spawner : MonoBehaviour
     private bool topbound = false;
     public bool isSpawned = false;
     public float speed = 5.0f;
-    private float yDownRange = 48f;
-    private float yUpRange = 58f;
+    // was 49
+    private float yDownRange = 49f;
+    // was 53
+    private float yUpRange = 53f;
 
     public GameObject laserPrefab;
     void Start()
@@ -56,6 +58,6 @@ public class spawner : MonoBehaviour
             Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation);
             yield return new WaitForSeconds(0.5f);
         }
-        //Debug.Log("Hello");
+        // Debug.Log("Hello");
     }
 }

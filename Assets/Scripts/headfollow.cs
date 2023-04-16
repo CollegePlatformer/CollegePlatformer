@@ -32,7 +32,6 @@ public class headfollow : MonoBehaviour
     IEnumerator headpop()
     {
         yield return new WaitForSeconds(3.0f);
-        Debug.Log("Here");
         for (int i = 0; i < 3; i++)
         {
             children[i].SetActive(true);
