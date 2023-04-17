@@ -35,7 +35,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.Log(jumpCount);
-        playerMovement();
+        //playerMovement();
+        //Debug.Log("horizontalInput: " + horizontalInput);
+
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        Vector3 direction = new Vector3(horizontalInput, 0, 0);
+        direction.Normalize();
+
+        transform.Translate(direction * walkSpeed * Time.deltaTime, Space.World);
+
+        if (direction != Vector3.zero)
+        {
+            //transform.forward = direction;
+            Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
 
         if (horizontalInput != 0)
         {
@@ -72,9 +86,9 @@ public class PlayerController : MonoBehaviour
         }*/
         else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P)))
         {
-            Debug.Log("jump key released");
-            // attempt at making jump height variable/have the player start falling as soon as jump input is let go
-            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+                Debug.Log("no horizontalInput + jump released");
+                playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
+            
             //StartCoroutine(DelayedFall());
             // ay yo where the speedcap at
         }
@@ -103,6 +117,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    /*
     void playerMovement()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -117,7 +132,7 @@ public class PlayerController : MonoBehaviour
             Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
         }
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -150,10 +165,12 @@ public class PlayerController : MonoBehaviour
             studentAnim.SetBool("Run_Slow_Anim", false);
         }
     }
-    /*
-    IEnumerator DelayedFall()
+    
+    /*IEnumerator DelayedFall()
     {
         yield return new WaitForSeconds(0.5f);
         playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+        Debug.Log("addforce");
+        
     }*/
 }
