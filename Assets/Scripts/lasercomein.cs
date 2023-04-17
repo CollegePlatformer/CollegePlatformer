@@ -35,7 +35,10 @@ public class lasercomein : MonoBehaviour
     void Update()
     {
         newPosition = gameObject.transform.position;
-        newPosition.x = player.transform.position.x - 26f;
+        if (player != null)
+        {
+            newPosition.x = player.transform.position.x - 26f;
+        }
         newPosition.y = gameObject.transform.position.y;
         gameObject.transform.position = newPosition;
 
