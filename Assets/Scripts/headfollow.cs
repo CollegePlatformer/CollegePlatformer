@@ -24,7 +24,7 @@ public class headfollow : MonoBehaviour
         newPosition = gameObject.transform.position;
         if (player != null)
         {
-            newPosition.y = player.transform.position.y + 3;
+            newPosition.y = player.transform.position.y - 1;
         }
         gameObject.transform.position = newPosition;
     }
