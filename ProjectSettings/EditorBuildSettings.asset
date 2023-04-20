@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 96bae7fca89df7f4b910b624342ffdc7
+  - enabled: 1
     path: Assets/Scenes/LevelSelector.unity
     guid: 6ffcba5c812c27b4683db377da28c21c
   - enabled: 1
@@ -15,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: 54f6cba20fd5d2a48bd20f88dc4bd0a8
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
-    guid: e9017d5f96b9f09489b4b37e1d6eb914
+    path: Assets/Scenes/Level3.unity
+    guid: 71d87c7113ee94c45ab919d95e2d38d4
   - enabled: 1
     path: Assets/Scenes/Laser.unity
     guid: fbfae1a6217dc4a47b5cb6a7fb9e91b5
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelPusher.unity
     guid: c231cb068976a50419fe3f9049ea68de
+  - enabled: 0
+    path: Assets/Scenes/Playground.unity
+    guid: e9017d5f96b9f09489b4b37e1d6eb914
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
