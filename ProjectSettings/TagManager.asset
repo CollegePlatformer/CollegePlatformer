@@ -10,6 +10,7 @@ TagManager:
   - PlayerShot
   - Eraser
   - Sticky
+  - Coffee
   layers:
   - Default
   - TransparentFX
