@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
+        //Physics.gravity *= gravityModifier;
         studentAnim = GetComponent<Animator>();
     }
 
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("jump key released");
             // attempt at making jump height variable/have the player start falling as soon as jump input is let go
-            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+            //playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
         }
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
