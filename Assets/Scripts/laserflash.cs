@@ -9,8 +9,12 @@ public class laserflash : MonoBehaviour
     [SerializeField] GameObject player;
     private Material material;
 
+    public AudioSource laserchargesound;
 
+    public AudioSource laserfiresound;
 
+    private bool phase1sound = false;
+    private bool phase2sound = false;
     Collider m_Collider;
     public float alpha = 0f;
     // Start is called before the first frame update
@@ -48,8 +52,18 @@ public class laserflash : MonoBehaviour
     IEnumerator laserphase()
     {
         yield return new WaitForSeconds(2f);
+        if (!phase1sound)
+        {
+            laserchargesound.Play();
+            phase1sound = true;
+        }
         alpha = 0.5f;
         yield return new WaitForSeconds(2f);
+        if (!phase2sound)
+        {
+            laserfiresound.Play();
+            phase2sound = true;
+        }
         alpha = 1f;
         // gameObject.tag = "Enemy";
         yield return new WaitForSeconds(2f);
