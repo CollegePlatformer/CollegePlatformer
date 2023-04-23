@@ -37,9 +37,16 @@ public class Border : MonoBehaviour
     {
         if (other.gameObject.name == "Student")
         {
-            Debug.Log("Hit");
+            // Debug.Log("Hit");
             StartCoroutine(Hit());
         }
+
+        // if (other.gameObject.name.Contains("Blocker") || other.gameObject.tag == "Enemy")
+        // {
+        //     // Debug.Log("Destroy");
+        //     Destroy(other.gameObject);
+        // }
+        // Debug.Log("border has hit" + other);
     }
 
     IEnumerator Countdown()

@@ -12,6 +12,7 @@ public class checkpoint : MonoBehaviour
     private string platformtouch;
     public AudioSource soundPlayer;
     public bool hasPlayed = false;
+    public int checkpointnum = 0;
     void Start()
     {
         for (int i = 0; i < checkArray.Length; i++)
@@ -37,14 +38,17 @@ public class checkpoint : MonoBehaviour
         {
             case "Checkpoint0":
                 checkpointmarker = positions[0];
+                checkpointnum = 1;
                 Audioplay();
                 break;
             case "Checkpoint1":
                 checkpointmarker = positions[1];
+                checkpointnum = 2;
                 Audioplay();
                 break;
             case "Checkpoint2":
                 checkpointmarker = positions[2];
+                checkpointnum = 3;
                 Audioplay();
                 break;
         }
