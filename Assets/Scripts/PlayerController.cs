@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityModifier = 1.0f;
     [SerializeField] GameObject shot, shootPoint;
     [SerializeField] float fallGravityModifierFactor;
+    [SerializeField] float coffeeDuration;
 
     public AudioSource pencilSound;
     public AudioSource jumpSound;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private Animator studentAnim;
     private bool hasPencilPlayed = false;
     private bool hasJumpPlayed = false;
+    private bool drankCoffee = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.Log(jumpCount);
-        playerMovement();
+        //playerMovement();
+        //Debug.Log("horizontalInput: " + horizontalInput);
+
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        Vector3 direction = new Vector3(horizontalInput, 0, 0);
+        direction.Normalize();
+
+        transform.Translate(direction * walkSpeed * Time.deltaTime, Space.World);
+
+        if (direction != Vector3.zero)
+        {
+            //transform.forward = direction;
+            Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
 
         if (horizontalInput != 0)
         {
@@ -70,12 +86,33 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
         }*/
-        else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P)))
-        {
-            Debug.Log("jump key released");
-            // attempt at making jump height variable/have the player start falling as soon as jump input is let go
-            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+        else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P))) {
+            
+            //if (horizontalInput == 0)
+            //{
+                playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
+            //}
+            
+
+            //StartCoroutine(DelayedFall());
+            // ay yo where the speedcap at
         }
+        
+        /*
+        else if (!isOnGround && !(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.P))) {
+            
+            if (horizontalInput == 0)
+            {
+                playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
+            }
+            
+
+            //StartCoroutine(DelayedFall());
+            // ay yo where the speedcap at
+        }
+        */
+
+         
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
         {
@@ -101,6 +138,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    /*
     void playerMovement()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -115,7 +153,7 @@ public class PlayerController : MonoBehaviour
             Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
         }
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -137,6 +175,14 @@ public class PlayerController : MonoBehaviour
             jump /= 2;
             studentAnim.SetBool("Run_Slow_Anim", true);
         }
+
+        if (other.gameObject.CompareTag("Coffee"))
+        {
+            Destroy(other.gameObject);
+
+            StartCoroutine(CoffeeBoost(coffeeDuration));
+
+        }
     }
 
     private void OnTriggerExit(Collider other) 
@@ -147,5 +193,22 @@ public class PlayerController : MonoBehaviour
             jump *= 2;
             studentAnim.SetBool("Run_Slow_Anim", false);
         }
+
+        
+    }
+    
+    /*IEnumerator DelayedFall()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
+        Debug.Log("addforce");
+        
+    }*/
+
+    IEnumerator CoffeeBoost(float duration)
+    {
+        walkSpeed *= 2;
+        yield return new WaitForSeconds(duration);
+        walkSpeed /= 2;
     }
 }
