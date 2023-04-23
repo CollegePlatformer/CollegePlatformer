@@ -3251,6 +3251,7 @@ MonoBehaviour:
   checkpointmarker: {x: 0, y: 0, z: 0}
   soundPlayer: {fileID: 1152291502}
   hasPlayed: 0
+  checkpointnum: 0
 --- !u!82 &1152291502
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3563,7 +3564,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8423ba17a25a7c34ab89762b2a194bac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5304,7 +5305,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.1150794, y: 1}
+    m_SensorSize: {x: 3.260388, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5661,6 +5662,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pusher
       objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745654, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: speed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745655, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745655, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 648fea42984ce574bbde7956806e816b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774b9adbc4452564d910c871eec01c10, type: 3}
 --- !u!1001 &1797600507
