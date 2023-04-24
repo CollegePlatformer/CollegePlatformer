@@ -34,7 +34,7 @@ public class Border : MonoBehaviour
         }
         if (pencilhit)
         {
-            pencilhit = false;
+            // pencilhit = false;
             StartCoroutine(Pencilstun());
         }
     }
@@ -52,7 +52,7 @@ public class Border : MonoBehaviour
         //     // Debug.Log("Destroy");
         //     Destroy(other.gameObject);
         // }
-        Debug.Log("border has hit " + other);
+        // Debug.Log("border has hit " + other);
     }
 
     IEnumerator Countdown()
@@ -79,5 +79,6 @@ public class Border : MonoBehaviour
         speed = 1.0f;
         yield return new WaitForSeconds(1.0f);
         speed = 6.0f;
+        pencilhit = false;
     }
 }

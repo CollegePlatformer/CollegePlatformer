@@ -8,6 +8,7 @@ public class skin_change : MonoBehaviour
     public GameObject angry;
     public GameObject border;
     public Material newMaterialRef;
+    public Material hitMaterial;
     // Material redMaterial = new Material(Shader.Find("Standard"));
     // redMaterial.color = Color.red;
     // Start is called before the first frame update
@@ -34,11 +35,11 @@ public class skin_change : MonoBehaviour
         {
             StartCoroutine(ChangeSkinColor(material, meshRenderer));
         }
-        Debug.Log("Pencil hit is now " + hitcheck.pencilhit);
+        // Debug.Log("Pencil hit is now " + hitcheck.pencilhit);
         if (hitcheck.pencilhit)
         {
-            Debug.Log("Pwease");
-            // StartCoroutine(SkinHit());
+            // Debug.Log("Pwease");
+            StartCoroutine(SkinHit());
         }
     }
 
@@ -51,12 +52,22 @@ public class skin_change : MonoBehaviour
         // input.color = Color.magenta;
         // input = newmat;
     }
-    // IEnumerator SkinHit()
-    // {
-    //     materialold = material;
-    //     material.color = Color.yellow;
-    //     Debug.Log("Please change to yellow");
-    //     yield return new WaitForSeconds(1.0f);
-    //     material = materialold;
-    // }
+    IEnumerator SkinHit()
+    {
+        // Debug.Log("Material previous was " + materialold);
+        // materialold = meshRenderer.material;
+        // material.color = Color.yellow;
+        meshRenderer.material = hitMaterial;
+        // Debug.Log("Please change to yellow");
+        yield return new WaitForSeconds(1.0f);
+        if (angercheck.angry)
+        {
+            meshRenderer.material = newMaterialRef;
+        }
+        else
+        {
+            meshRenderer.material = material;
+        }
+        // Debug.Log("Material now is " + materialold);
+    }
 }
