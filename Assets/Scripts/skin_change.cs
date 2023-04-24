@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class skin_change : MonoBehaviour
 {
     public GameObject angry;
-    public GameObject border;
+    private GameObject border;
     public Material newMaterialRef;
     public Material hitMaterial;
     // Material redMaterial = new Material(Shader.Find("Standard"));
@@ -19,7 +19,7 @@ public class skin_change : MonoBehaviour
     Border hitcheck;
     void Start()
     {
-        // border = GameObject.Find("Pusher");
+        border = GameObject.Find("Pusher");
         hitcheck = border.GetComponent<Border>();
         angercheck = angry.GetComponent<angrymode>();
         meshRenderer = gameObject.GetComponent<MeshRenderer>();

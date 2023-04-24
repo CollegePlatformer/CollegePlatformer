@@ -26,7 +26,7 @@ public class Finish : MonoBehaviour
     {
         if (other.gameObject.name == "Student")
         {
-            Debug.Log("gg");
+            // Debug.Log("gg");
             controller.atFinish = true;
             if(!hasPlayed)
             {
