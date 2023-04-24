@@ -6,15 +6,20 @@ using UnityEngine.Rendering.Universal;
 public class skin_change : MonoBehaviour
 {
     public GameObject angry;
+    public GameObject border;
     public Material newMaterialRef;
     // Material redMaterial = new Material(Shader.Find("Standard"));
     // redMaterial.color = Color.red;
     // Start is called before the first frame update
     private MeshRenderer meshRenderer;
     private Material material;
+    private Material materialold;
     angrymode angercheck;
+    Border hitcheck;
     void Start()
     {
+        // border = GameObject.Find("Pusher");
+        hitcheck = border.GetComponent<Border>();
         angercheck = angry.GetComponent<angrymode>();
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         material = meshRenderer.material;
@@ -29,14 +34,29 @@ public class skin_change : MonoBehaviour
         {
             StartCoroutine(ChangeSkinColor(material, meshRenderer));
         }
+        Debug.Log("Pencil hit is now " + hitcheck.pencilhit);
+        if (hitcheck.pencilhit)
+        {
+            Debug.Log("Pwease");
+            // StartCoroutine(SkinHit());
+        }
     }
 
     IEnumerator ChangeSkinColor(Material input, MeshRenderer meshR)
     {
+        materialold = input;
         meshR.material = newMaterialRef;
         yield return new WaitForSeconds(2.0f);
         // gameObject.meshRenderer.material = newMat;
         // input.color = Color.magenta;
         // input = newmat;
     }
+    // IEnumerator SkinHit()
+    // {
+    //     materialold = material;
+    //     material.color = Color.yellow;
+    //     Debug.Log("Please change to yellow");
+    //     yield return new WaitForSeconds(1.0f);
+    //     material = materialold;
+    // }
 }

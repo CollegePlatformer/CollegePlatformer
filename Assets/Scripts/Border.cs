@@ -10,6 +10,7 @@ public class Border : MonoBehaviour
     public float speed = 6.0f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
+    public bool pencilhit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,11 @@ public class Border : MonoBehaviour
                 gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
             }
         }
+        if (pencilhit)
+        {
+            pencilhit = false;
+            StartCoroutine(Pencilstun());
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -46,7 +52,7 @@ public class Border : MonoBehaviour
         //     // Debug.Log("Destroy");
         //     Destroy(other.gameObject);
         // }
-        // Debug.Log("border has hit" + other);
+        Debug.Log("border has hit " + other);
     }
 
     IEnumerator Countdown()
@@ -66,5 +72,12 @@ public class Border : MonoBehaviour
         gameObject.transform.position = gameObject.transform.position - new Vector3(25, 0, 0);
         yield return new WaitForSeconds(timer - 1);
         move = true;
+    }
+
+    IEnumerator Pencilstun()
+    {
+        speed = 1.0f;
+        yield return new WaitForSeconds(1.0f);
+        speed = 6.0f;
     }
 }
