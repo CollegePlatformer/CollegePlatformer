@@ -610,6 +610,11 @@ PrefabInstance:
       propertyPath: pencilSound
       value: 
       objectReference: {fileID: 1152291510}
+    - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
+        type: 3}
+      propertyPath: fallGravityModifierFactor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2790397273861920952, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
       propertyPath: m_RootOrder
@@ -5399,7 +5404,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.7990315, y: 1}
+    m_SensorSize: {x: 2.024172, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

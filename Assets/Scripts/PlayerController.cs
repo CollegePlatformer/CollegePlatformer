@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool hasPencilPlayed = false;
     private bool hasJumpPlayed = false;
     private bool drankCoffee = false;
+    private int coffeeCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -178,9 +179,19 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coffee"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            if (drankCoffee == false && coffeeCount == 0)
+            {
+                drankCoffee = true;
+                coffeeCount = 1;
+            }
 
-            StartCoroutine(CoffeeBoost(coffeeDuration));
+            if (drankCoffee == true && coffeeCount == 1)
+            {
+                drankCoffee = false;
+                StartCoroutine(CoffeeBoost(coffeeDuration));                
+            }
+
 
         }
     }
@@ -207,8 +218,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator CoffeeBoost(float duration)
     {
+        Debug.Log("coffee coroutine start");
         walkSpeed *= 2;
         yield return new WaitForSeconds(duration);
         walkSpeed /= 2;
+        coffeeCount = 0;
+        Debug.Log("coffee coroutine end");
     }
 }
