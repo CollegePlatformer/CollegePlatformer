@@ -2183,7 +2183,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.7990315, y: 1}
+    m_SensorSize: {x: 2.024172, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4124,6 +4124,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450510946036280450, guid: 8f9f688cd039ee14e9f8ec6fd9ec728a,
+        type: 3}
+      propertyPath: fallGravityModifierFactor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1880231883202598730, guid: 8f9f688cd039ee14e9f8ec6fd9ec728a,
         type: 3}
       propertyPath: m_Volume
