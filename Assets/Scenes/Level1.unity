@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angry: {fileID: 6359137100151700792}
   newMaterialRef: {fileID: 2100000, guid: b9fc015a805de4e4193b04a60b4a4868, type: 2}
+  hitMaterial: {fileID: 2100000, guid: 5dca0e32b4c0b5541b1ccb8e6f796bb2, type: 2}
 --- !u!1 &337406396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2184,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.7990315, y: 1}
+    m_SensorSize: {x: 3.8150852, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4110,6 +4111,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7967886029802641931, guid: 2c78dc9834321e74095b4668578aab44,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7967886029802641933, guid: 2c78dc9834321e74095b4668578aab44,
         type: 3}
       propertyPath: m_Name
@@ -4124,6 +4130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1450510946036280450, guid: 8f9f688cd039ee14e9f8ec6fd9ec728a,
+        type: 3}
+      propertyPath: fallGravityModifierFactor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1880231883202598730, guid: 8f9f688cd039ee14e9f8ec6fd9ec728a,
         type: 3}
       propertyPath: m_Volume

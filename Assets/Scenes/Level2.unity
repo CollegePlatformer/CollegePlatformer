@@ -593,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angry: {fileID: 1877490883}
   newMaterialRef: {fileID: 2100000, guid: b9fc015a805de4e4193b04a60b4a4868, type: 2}
+  hitMaterial: {fileID: 2100000, guid: 5dca0e32b4c0b5541b1ccb8e6f796bb2, type: 2}
 --- !u!1001 &404653169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -600,6 +601,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
+        type: 3}
+      propertyPath: dashTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
       propertyPath: jumpSound
@@ -610,6 +616,11 @@ PrefabInstance:
       propertyPath: pencilSound
       value: 
       objectReference: {fileID: 1152291510}
+    - target: {fileID: 1024196090462301463, guid: 93a599a36db38cd4a8136be4bcc0949b,
+        type: 3}
+      propertyPath: fallGravityModifierFactor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2790397273861920952, guid: 93a599a36db38cd4a8136be4bcc0949b,
         type: 3}
       propertyPath: m_RootOrder
@@ -5399,7 +5410,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.7990315, y: 1}
+    m_SensorSize: {x: 3.8150852, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

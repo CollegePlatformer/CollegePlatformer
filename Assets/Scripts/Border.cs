@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Border : MonoBehaviour
 {
@@ -10,10 +11,15 @@ public class Border : MonoBehaviour
     public float speed = 6.0f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
+    public bool pencilhit = false;
+    private string sceneName;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Student");
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+        // Debug.Log(sceneName);
         StartCoroutine(Countdown());
     }
 
@@ -31,6 +37,11 @@ public class Border : MonoBehaviour
                 gameObject.transform.position = player.transform.position - new Vector3(37, 0, 0);
             }
         }
+        if (pencilhit)
+        {
+            // pencilhit = false;
+            StartCoroutine(Pencilstun());
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -46,7 +57,7 @@ public class Border : MonoBehaviour
         //     // Debug.Log("Destroy");
         //     Destroy(other.gameObject);
         // }
-        // Debug.Log("border has hit" + other);
+        // Debug.Log("border has hit " + other);
     }
 
     IEnumerator Countdown()
@@ -66,5 +77,20 @@ public class Border : MonoBehaviour
         gameObject.transform.position = gameObject.transform.position - new Vector3(25, 0, 0);
         yield return new WaitForSeconds(timer - 1);
         move = true;
+    }
+
+    IEnumerator Pencilstun()
+    {
+        speed = 1.0f;
+        yield return new WaitForSeconds(1.0f);
+        if (sceneName == "Level2")
+        {
+            speed = 7.0f;
+        }
+        else
+        {
+            speed = 6.0f;
+        }
+        pencilhit = false;
     }
 }
