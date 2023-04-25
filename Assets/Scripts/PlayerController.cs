@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     public AudioSource jumpSound;
     private float turnSpeed = 5f;
     private float horizontalInput;
+    private float dashTime = 0.25f;
+    private float dashDuration = 0f;
+    private float dashCooldown;
+    // how long the dashCooldown lasts
+    public float dashCooldownTimer = 2.0f;
+    public float dashSensitivity = 0.1f;
     private int jumpCount = 2;
     public bool atFinish = false;
     public bool isDead = false;
@@ -24,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool hasPencilPlayed = false;
     private bool hasJumpPlayed = false;
     private bool drankCoffee = false;
+    private bool dashReady = true;
+
     private int coffeeCount = 0;
 
     // Start is called before the first frame update
@@ -53,6 +61,31 @@ public class PlayerController : MonoBehaviour
             Vector3 toRotation = Vector3.RotateTowards(transform.forward, direction, Time.deltaTime * turnSpeed, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
         }
+
+        if ((Input.GetKeyDown(KeyCode.LeftShift)) && dashReady)
+        {
+            dashReady = false;
+            dashDuration = Time.time;
+            dashCooldown = Time.time + dashCooldownTimer;
+            StartCoroutine(Dash(direction, walkSpeed));
+        }
+
+        if (dashDuration >= dashCooldown)
+        {
+            dashReady = true;
+            dashDuration = 0f;
+        }
+
+
+        if (dashDuration < dashCooldown && dashReady == false)
+        {
+            dashDuration = Time.time;
+        }
+
+        // Debug.Log("DashDuration is now " + dashDuration);
+        
+        // Debug.Log("DashCooldown is now " + dashCooldown);
+        // Debug.Log("dashRead")
 
         if (horizontalInput != 0)
         {
@@ -87,18 +120,19 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jump, ForceMode.Impulse);
             jumpCount--;
         }*/
-        else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P))) {
-            
+        else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P)))
+        {
+
             //if (horizontalInput == 0)
             //{
-                playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
+            playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
             //}
-            
+
 
             //StartCoroutine(DelayedFall());
             // ay yo where the speedcap at
         }
-        
+
         /*
         else if (!isOnGround && !(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.P))) {
             
@@ -113,7 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         */
 
-         
+
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
         {
@@ -127,16 +161,17 @@ public class PlayerController : MonoBehaviour
             hasPencilPlayed = false;
         }
 
-        
-        if(playerRb.velocity.y > 0)
+
+        if (playerRb.velocity.y > 0)
         {
             studentAnim.SetBool("Jump_Anim", true);
             studentAnim.SetBool("Run_Anim", false);
-        } else
+        }
+        else
         {
             studentAnim.SetBool("Jump_Anim", false);
         }
-        
+
     }
 
     /*
@@ -168,9 +203,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Sticky"))
+        if (other.gameObject.CompareTag("Sticky"))
         {
             walkSpeed /= 2;
             jump /= 2;
@@ -189,25 +224,25 @@ public class PlayerController : MonoBehaviour
             if (drankCoffee == true && coffeeCount == 1)
             {
                 drankCoffee = false;
-                StartCoroutine(CoffeeBoost(coffeeDuration));                
+                StartCoroutine(CoffeeBoost(coffeeDuration));
             }
 
 
         }
     }
 
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.CompareTag("Sticky"))
+        if (other.gameObject.CompareTag("Sticky"))
         {
             walkSpeed *= 2;
             jump *= 2;
             studentAnim.SetBool("Run_Slow_Anim", false);
         }
 
-        
+
     }
-    
+
     /*IEnumerator DelayedFall()
     {
         yield return new WaitForSeconds(0.5f);
@@ -224,5 +259,20 @@ public class PlayerController : MonoBehaviour
         walkSpeed /= 2;
         coffeeCount = 0;
         Debug.Log("coffee coroutine end");
+    }
+
+    IEnumerator Dash(Vector3 directwhoosh, float speed)
+    {
+        float startTime = Time.time;
+
+        // Debug.Log("startime is now " + startTime);
+        // Debug.Log("Time.time is now " + Time.time);
+        while (Time.time < startTime + dashTime)
+        {
+            directwhoosh = new Vector3(horizontalInput + dashSensitivity, 0, 0);
+            transform.Translate(directwhoosh * walkSpeed * Time.deltaTime, Space.World);
+            yield return null;
+        }
+        // yield return new WaitForSeconds(2.0f);
     }
 }
