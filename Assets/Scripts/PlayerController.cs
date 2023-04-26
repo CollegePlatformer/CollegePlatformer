@@ -122,32 +122,15 @@ public class PlayerController : MonoBehaviour
         }*/
         else if (!isOnGround && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.P)))
         {
-
-            //if (horizontalInput == 0)
-            //{
+            /*
+             * applies downward force if jump key relased midair, allows for variable jump height
+             * 
+             * https://youtu.be/2S3g8CgBG1g served as inspiration to consider mechanics
+             * 
+             */
             playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
-            //}
 
-
-            //StartCoroutine(DelayedFall());
-            // ay yo where the speedcap at
         }
-
-        /*
-        else if (!isOnGround && !(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.P))) {
-            
-            if (horizontalInput == 0)
-            {
-                playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.VelocityChange);
-            }
-            
-
-            //StartCoroutine(DelayedFall());
-            // ay yo where the speedcap at
-        }
-        */
-
-
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.O))
         {
@@ -243,22 +226,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    /*IEnumerator DelayedFall()
-    {
-        yield return new WaitForSeconds(0.5f);
-        playerRb.AddForce(Vector3.down * fallGravityModifierFactor, ForceMode.Impulse);
-        Debug.Log("addforce");
-        
-    }*/
-
     IEnumerator CoffeeBoost(float duration)
     {
-        Debug.Log("coffee coroutine start");
+        //Debug.Log("coffee coroutine start");
         walkSpeed *= 2;
         yield return new WaitForSeconds(duration);
         walkSpeed /= 2;
         coffeeCount = 0;
-        Debug.Log("coffee coroutine end");
+        //Debug.Log("coffee coroutine end");
     }
 
     IEnumerator Dash(Vector3 directwhoosh, float speed)
