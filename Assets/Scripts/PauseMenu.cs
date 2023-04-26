@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        Physics.gravity = new Vector3(0, -9.8f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
     }
 }

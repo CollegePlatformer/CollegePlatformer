@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-
     public SpinlightManager spinlightManager;
 
     void Update()
