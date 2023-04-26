@@ -3896,6 +3896,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pusher
       objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745654, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745654, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: speedlevel1
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6312272547856745655, guid: 774b9adbc4452564d910c871eec01c10,
         type: 3}
       propertyPath: m_Volume
