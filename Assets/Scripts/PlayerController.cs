@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private bool hasPencilPlayed = false;
     private bool hasJumpPlayed = false;
     private bool drankCoffee = false;
-    private bool dashReady = true;
+    public bool dashReady = true;
 
     private int coffeeCount = 0;
 
