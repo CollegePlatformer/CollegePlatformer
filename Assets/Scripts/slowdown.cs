@@ -37,7 +37,7 @@ public class slowdown : MonoBehaviour
     {
         if (part2 == true)
         {
-            slowduration = 6.0f;
+            slowduration = 9.0f;
         }
         // slow = false;
         bordergameobject.speed = 3f;
