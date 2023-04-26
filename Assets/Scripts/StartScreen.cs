@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
+
+    public SpinlightManager spinlightManager;
+
+    void Update()
+    {
+        spinlightManager.Spin();
+        spinlightManager.Scale();
+    }
+
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
