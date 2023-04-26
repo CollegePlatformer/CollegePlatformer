@@ -9,6 +9,10 @@ public class Border : MonoBehaviour
     private float timer = 3.0f;
     private bool move = false;
     public float speed = 6.0f;
+    //maybe delete these public variables after polishing the touches of the speeds
+    public float speedlevel1 = 6.0f;
+    public float speedlevel2 = 7.0f;
+    public float speedlevel3 = 7.0f;
     public AudioSource soundPlayer;
     private bool hasPlayed = false;
     public bool pencilhit = false;
