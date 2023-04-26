@@ -6,7 +6,7 @@ public class slowdown : MonoBehaviour
 {
     public GameObject border;
     Border bordergameobject;
-    private bool slow = false;
+    // private bool slow = false;
     private bool part2 = false;
     private float slowduration = 3.0f;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class slowdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (slow == true)
+        if (bordergameobject.slow == true)
         {
             StartCoroutine(slowstart());
         }
@@ -29,7 +29,7 @@ public class slowdown : MonoBehaviour
     {
         if (other.gameObject.name == "Student")
         {
-            slow = true;
+            bordergameobject.slow = true;
         }
     }
 
@@ -37,15 +37,16 @@ public class slowdown : MonoBehaviour
     {
         if (part2 == true)
         {
-            slowduration = 12.0f;
+            slowduration = 6.0f;
         }
-        slow = false;
+        // slow = false;
         bordergameobject.speed = 3f;
         yield return new WaitForSeconds(slowduration);
-        bordergameobject.speed = 6f;
+        bordergameobject.speed = bordergameobject.speedlevel1;
         if (part2 == false)
         {
             part2 = true;
         }
+        bordergameobject.slow = false;
     }
 }

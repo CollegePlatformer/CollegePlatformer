@@ -399,6 +399,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e1716eeadd4ad64496d687e870c2916, type: 3}
+--- !u!1 &52782865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 599719240506408208, guid: 465da79ef9542554babd7f1fc78bf2f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1132080825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &72715719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9425,9 +9431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea69ca10d57564653baa530aba4674f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angry: {fileID: 0}
-  newMaterialRef: {fileID: 0}
-  hitMaterial: {fileID: 0}
+  angry: {fileID: 52782865}
+  newMaterialRef: {fileID: 2100000, guid: b9fc015a805de4e4193b04a60b4a4868, type: 2}
+  hitMaterial: {fileID: 2100000, guid: 5dca0e32b4c0b5541b1ccb8e6f796bb2, type: 2}
 --- !u!1001 &1568922104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12344,7 +12350,12 @@ PrefabInstance:
     - target: {fileID: 6312272547856745654, guid: 774b9adbc4452564d910c871eec01c10,
         type: 3}
       propertyPath: speed
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312272547856745654, guid: 774b9adbc4452564d910c871eec01c10,
+        type: 3}
+      propertyPath: speedlevel3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6312272547856745655, guid: 774b9adbc4452564d910c871eec01c10,
         type: 3}

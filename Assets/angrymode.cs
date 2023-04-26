@@ -10,7 +10,7 @@ public class angrymode : MonoBehaviour
     public bool angry = false;
     private bool hasPlayed = false;
     private float speedduration = 3.0f;
-    private float speedincrease = 3.0f;
+    private float speedincrease = 2.0f;
     public AudioSource angrySound;
     // Start is called before the first frame update
     void Start()
@@ -46,6 +46,7 @@ public class angrymode : MonoBehaviour
         if (fast == false)
         {
             fast = true;
+            Debug.Log("AngryTime");
             bordergameobject.speed += speedincrease;
             yield return new WaitForSeconds(speedduration);
             bordergameobject.speed -= speedincrease;
